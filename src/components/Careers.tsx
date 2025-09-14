@@ -5,7 +5,7 @@ export default function Careers() {
     <section className="py-16 bg-sky-50">
       <div className="container mx-auto text-center max-w-3xl px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-sky-900 mb-4">
-          We’re Hiring: Aviation Mechanic
+          We’re Hiring: Aviation Mechanics
         </h2>
         <p className="text-lg text-gray-700 mb-6">
           Fly Sky Park is looking for a certified Aviation Mechanic to join our
