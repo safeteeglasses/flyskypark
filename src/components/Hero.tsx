@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+
 
 export default function Hero() {
   return (
@@ -16,13 +18,14 @@ export default function Hero() {
             className="inline-block px-6 py-3 bg-orange-500 rounded-full font-semibold hover:bg-orange-600 transition"
           >
             Book Your First Flight
-          </a>
-          <a
+            </a>
+          {/* View Rates button → /rentals */}
+          <Link
             href="/rentals"
             className="inline-block px-6 py-3 border border-white rounded-full hover:bg-white hover:text-sky-900 transition"
           >
             View Rates
-          </a>
+            </Link>
         </div>
       </div>
     </section>

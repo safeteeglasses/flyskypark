@@ -1,12 +1,13 @@
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Careers from "@/components/Careers";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <div className="p-8 text-center">
-        <p className="text-lg">Your next adventure starts here.</p>
-      </div>
+      <Services />
+      <Careers />
     </>
   );
 }
