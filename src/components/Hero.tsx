@@ -31,6 +31,14 @@ export default function Hero() {
           >
             View Rates
           </Link>
+          <a
+            href="https://www.schedulemaster.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 border border-sky-900 rounded-full hover:bg-sky-900 hover:text-white transition"
+          >
+            Schedule Master
+          </a>
         </div>
       </div>
     </section>
