@@ -8,7 +8,7 @@ export default function Careers() {
           We’re Hiring: Aviation Mechanics
         </h2>
         <p className="text-lg text-gray-700 mb-6">
-          Fly Sky Park is looking for a certified Aviation Mechanic to join our
+          Sky Park is looking for a certified Aviation Mechanic to join our
           growing team. Help maintain our fleet of aircraft and keep our pilots
           flying safely.
         </p>
