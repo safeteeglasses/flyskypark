@@ -22,6 +22,11 @@ const services: Service[] = [
     description: "Fly-ins, airshows, and social gatherings year-round.",
     icon: "🎉",
   },
+  {
+    title: "Fuel Services",
+    description: "Competitive fuel prices for members and transient pilots.",
+    icon: "⛽",
+  }
 ];
 
 export default function Services() {
@@ -31,7 +36,7 @@ export default function Services() {
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-sky-900">
           Our Services
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-4"> {/* Changed to 4 columns */}
           {services.map((svc) => (
             <div
               key={svc.title}

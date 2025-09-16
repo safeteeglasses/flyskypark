@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="mt-6 flex justify-center gap-4">
           <a
             href="/learn-to-fly"
-            className="inline-block px-6 py-3 bg-orange-500 rounded-full font-semibold hover:bg-orange-600 transition"
+            className="inline-block px-6 py-3 border border-sky-900 rounded-full hover:bg-sky-900 hover:text-white transition"
           >
             Book Your First Flight
           </a>
