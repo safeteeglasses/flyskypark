@@ -9,8 +9,11 @@ type MetarData = {
   wspd: number;
   visib: string;
   altim: number;
+  slp: number;      // ✅ sea-level pressure
   rawOb: string;
   name: string;
+  cover: string;
+  fltCat: string;
 };
 
 async function fetchMetar(): Promise<MetarData | null> {
@@ -42,7 +45,6 @@ export default async function MetarWidget() {
     );
   }
 
-  // Convert to inches of mercury
   const altimInHg = (metar.altim / 33.8639).toFixed(2);
 
   return (
@@ -81,11 +83,39 @@ export default async function MetarWidget() {
               </p>
               <p className="text-xs uppercase text-gray-500">Visibility</p>
             </div>
-            <div className="col-span-2">
+            <div>
+              <p className="text-xl font-semibold text-sky-700">{metar.cover}</p>
+              <p className="text-xs uppercase text-gray-500">Cloud Cover</p>
+            </div>
+            <div>
+              <p
+                className={`text-xl font-semibold ${
+                  metar.fltCat === "VFR"
+                    ? "text-green-600"
+                    : metar.fltCat === "MVFR"
+                    ? "text-blue-600"
+                    : metar.fltCat === "IFR"
+                    ? "text-red-600"
+                    : "text-gray-700"
+                }`}
+              >
+                {metar.fltCat}
+              </p>
+              <p className="text-xs uppercase text-gray-500">Flight Category</p>
+            </div>
+
+            {/* ✅ New two-column row for pressures */}
+            <div>
               <p className="text-lg font-semibold text-sky-700">
                 {altimInHg} inHg
               </p>
               <p className="text-xs uppercase text-gray-500">Altimeter</p>
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-sky-700">
+                {metar.slp.toFixed(1)} hPa
+              </p>
+              <p className="text-xs uppercase text-gray-500">Sea-Level Pressure</p>
             </div>
           </div>
 
