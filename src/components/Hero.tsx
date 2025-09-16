@@ -1,13 +1,19 @@
 "use client";
 import Link from "next/link";
 
-
 export default function Hero() {
   return (
-    <section className="relative bg-[url('/images/Runway.jpg')] bg-cover bg-center h-[60vh] flex items-center">
-      <div className="container mx-auto text-center text-white px-4">
+    <section className="relative h-[60vh] flex flex-col items-center justify-center bg-white">
+    {/* Centered Icon */}
+    <img
+      src="/images/WelzienSkypark.png"
+      alt="Skypark Logo"
+      className="w-[320px] h-[320px] object-contain mb-6"
+    />
+      
+      <div className="container mx-auto text-center text-sky-900 px-4">
         <h1 className="text-4xl md:text-6xl font-bold drop-shadow-md">
-          Experience Flying with Skypark
+          Experience Flying at Skypark
         </h1>
         <p className="mt-4 text-lg md:text-2xl drop-shadow-sm">
           Professional flight instruction, aircraft rental, and a friendly aviation community
@@ -18,14 +24,13 @@ export default function Hero() {
             className="inline-block px-6 py-3 bg-orange-500 rounded-full font-semibold hover:bg-orange-600 transition"
           >
             Book Your First Flight
-            </a>
-          {/* View Rates button → /rentals */}
+          </a>
           <Link
             href="/rentals"
-            className="inline-block px-6 py-3 border border-white rounded-full hover:bg-white hover:text-sky-900 transition"
+            className="inline-block px-6 py-3 border border-sky-900 rounded-full hover:bg-sky-900 hover:text-white transition"
           >
             View Rates
-            </Link>
+          </Link>
         </div>
       </div>
     </section>
