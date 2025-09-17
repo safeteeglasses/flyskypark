@@ -18,7 +18,7 @@ const instructors = [
   {
     name: "John Doe",
     certs: "CFI",
-    bio: "brings extensive back-country experience, having flown remote bush operations with advanced short-field and mountain-flying skills.",
+    bio: "Brings extensive back-country experience, having flown remote bush operations with advanced short-field and mountain-flying skills.",
     image: "/images/instructors/instructor3.jpg",
     email: "JohnDoe@skypark.com"
   }
@@ -28,9 +28,24 @@ export default function InstructorsPage() {
   return (
     <section className="py-12 bg-gradient-to-b from-white to-sky-50">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold text-center text-sky-800 mb-10">
+        <h1 className="text-3xl font-bold text-center text-sky-800 mb-6">
           Meet Our Flight Instructors
         </h1>
+
+        {/* Instructor-Focused Introduction */}
+        <div className="text-gray-700 mb-10 max-w-3xl mx-auto text-center space-y-4">
+          <p>
+            Our instructors come from all over northeast and north central Ohio and bring a wealth of experience to Skypark. They’ve guided students from local towns as well as international students in achieving their flying goals.
+          </p>
+          <p>
+            With expertise ranging from private pilot training to instrument and commercial ratings, our instructors ensure that pilots of all ages and skill levels receive the guidance they need to succeed.
+          </p>
+          <p>
+            Our instructors combine extensive experience with a passion for teaching, guiding students safely and confidently through every stage of flight training.
+          </p>
+        </div>
+
+        {/* Instructor Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {instructors.map(inst => (
             <div
@@ -50,7 +65,7 @@ export default function InstructorsPage() {
               <a
                 href={`mailto:${inst.email}`}
                 className="inline-block mt-4 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700"
-                >
+              >
                 Contact {inst.name.split(" ")[0]}
               </a>
             </div>
