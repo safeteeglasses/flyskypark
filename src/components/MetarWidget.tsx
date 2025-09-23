@@ -113,7 +113,7 @@ export default async function MetarWidget() {
             </div>
             <div>
               <p className="text-lg font-semibold text-sky-700">
-                {metar.slp.toFixed(1)} hPa
+                {typeof metar.slp === 'number' && !isNaN(metar.slp) ? metar.slp.toFixed(1) : 'N/A'} hPa
               </p>
               <p className="text-xs uppercase text-gray-500">Sea-Level Pressure</p>
             </div>
