@@ -3,16 +3,31 @@
 import React from "react";
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent default form submission
-    const formData = new FormData(e.target as HTMLFormElement); // Collect form data
-    const data = Object.fromEntries(formData.entries()); // Convert to an object
-
-    // Log the data (replace this with your API call or logic)
-    console.log("Form Data:", data);
-
-    // Example: Show an alert to the user
-    alert("Your message has been sent! Thank you for contacting us.");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData.entries());
+  
+    console.log("Form Data:", data); // Log the form data to verify it's correct
+  
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+  
+      console.log("API Response Status:", response.status); // Log the response status
+  
+      if (response.ok) {
+        alert("Your message has been sent!");
+      } else {
+        alert("Failed to send your message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send your message. Please try again.");
+    }
   };
 
   return (
@@ -74,6 +89,7 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={4}
+                required
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500"
               ></textarea>
             </div>
