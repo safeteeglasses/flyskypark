@@ -1,0 +1,15 @@
+{
+    "fuelType": "100LL Aviation Fuel",
+    "prices": [
+      {
+        "type": "Transient Price",
+        "rate":7.50,
+        "withTax": 8.00
+      },
+      {
+        "type": "Member Price",
+        "rate": 7.00,
+        "withTax": 7.50
+      }
+    ]
+  }
