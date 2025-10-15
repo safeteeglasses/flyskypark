@@ -1,0 +1,27 @@
+---
+name: flyspark_dev
+
+volumes:
+  node_modules: {}
+
+services:
+  app:
+    image: flyskypark:dev
+    container_name: flyskypark-next
+    restart: unless-stopped
+    build:
+      context: ..
+      network: host
+      dockerfile: containers/Dockerfile
+      args:
+        NODE_VER: slim
+      target: dev
+    environment:
+      NODE_ENV: development
+    ports:
+      - ${HTTP_PORT:-3000}:3000
+    volumes:
+      ## Mount source code in container for development
+      - ../:/app
+      ## Cache node modules
+      - ${APP_NODE_MODULES:-node_modules}:/app/node_modules
