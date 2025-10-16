@@ -1,0 +1,10 @@
+{
+    "Cessna 150": {
+      "memberPrice": "$119.00/hr",
+      "transientPrice": "$143.37/hr"
+    },
+    "Cessna 172": {
+      "memberPrice": "$156.00/hr",
+      "transientPrice": "$187.95/hr"
+    }
+  }
