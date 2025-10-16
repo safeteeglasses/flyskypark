@@ -3,13 +3,13 @@
     "prices": [
       {
         "type": "Transient Price",
-        "rate":7.50,
-        "withTax": 8.00
+        "rate":6.22,
+        "withTax": 6.64
       },
       {
         "type": "Member Price",
-        "rate": 7.00,
-        "withTax": 7.50
+        "rate": 5.16,
+        "withTax": 5.51
       }
     ]
   }
